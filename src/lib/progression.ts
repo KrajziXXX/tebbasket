@@ -71,7 +71,7 @@ export const NPC_HANDICAP = {
 
 /** NPC brain quality 0..1 (reactions, shot selection, steal/block eagerness). */
 export function npcDifficulty(mode: MatchMode, _level: number, rating: number) {
-  if (mode === 'ranked') return Math.max(0.3, Math.min(0.42, 0.3 + (rating - 1000) / 4000))
+  if (mode === 'ranked') return Math.max(0.28, Math.min(0.36, 0.28 + (rating - 1000) / 6000))
   return 0.2
 }
 

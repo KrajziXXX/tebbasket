@@ -107,7 +107,7 @@ Wszystkie wartości są w jednym miejscu: `src/lib/progression.ts` (klient) i `f
 | Zwód (crossover) | Shift/L lub przycisk „zwód”, odnowienie 2,2 s; chwilowy zryw w bok, w trakcie nie da się ukraść piłki; szansa ~12% na przewrócenie obrońcy, +30% gdy obrońca właśnie sięga po piłkę |
 | W ogniu | 3 kosze z rzędu bez odpowiedzi rywala: +10 pp do rzutów, powershot ładuje się 1,8× szybciej; gaśnie, gdy rywal trafi (w treningu: po pudle) |
 | Buzzer beater / złoty kosz | rzut w powietrzu w chwili syreny się liczy (slow-motion); remis → złoty kosz |
-| AI NPC | Zawsze **słabsze od gracza**, liczone względem jego statystyk z poziomu. Quick: −8% szybkości, −10 pp rzutów, −7 pp przechwytów, poziom 1–3 niżej, proste AI. Ranked: −3% szybkości, −4 pp rzutów, −3 pp przechwytów, poziom 0–1 niżej; AI lekko mądrzejsze z rankingiem (limit 0,42). Symulacja: przeciętny gracz wygrywa ~95% szybkich meczów (+13 pkt) i ~55–75% rankingowych (+4 pkt) |
+| AI NPC | Zawsze **słabsze od gracza**, liczone względem jego statystyk z poziomu. Quick: −8% szybkości, −10 pp rzutów, −7 pp przechwytów, poziom 1–3 niżej, AI 0,20. Ranked: −3% szybkości, −4 pp rzutów, −3 pp przechwytów, poziom 0–1 niżej, AI 0,28–0,36 (rośnie z rankingiem, zawsze poniżej przeciętnego gracza 0,40). Wyniki symulacji: `docs/testy/logi/symulacja-balansu.md` |
 | Sklep | 18 strojów (2 startowe, część z wzorami: prążki, gradient, gwiazdki, szarfa): za coins 250–2000 lub gems 40–150. Wymiana gems→coins: 10→1000, 50→5500, 100→12000. Pakiety gemów za PLN: **tylko UI + mock** |
 
 ## 7. Przed produkcją (poza MVP)

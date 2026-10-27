@@ -3,11 +3,18 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:log": "node scripts/test-log.mjs",
+    "test:docs": "node scripts/test-log.mjs && node scripts/test-cases.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
@@ -16,6 +23,7 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@types/node": "^22.20.5",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.2",
@@ -23,6 +31,7 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "typescript": "~5.6.2",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "vitest": "^2.1.9"
   }
 }

@@ -1,0 +1,35 @@
+=== tebBasket: przebieg testu balansu PRZED poprawką (limit AI w ranked = 0,42) ===
+Data: 2026-10-27 15:20:37   Polecenie: npx vitest run tests/balance.test.ts
+
+
+ RUN  v2.1.9 D:/tebbasket
+
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-01 każdy mecz kończy się poprawnie (zwycięzca, czas ≈ 3 min + przerwy)
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-02 szybki mecz: przeciętny gracz wygrywa ≥ 80% (NPC wyraźnie słabszy)
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-03 ranked: gracz wygrywa częściej niż przegrywa, ale nie zawsze (NPC tylko trochę słabszy)
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-04 przewaga punktowa w ranked jest mniejsza niż w szybkim meczu
+ × tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-07 w KAŻDEJ konfiguracji (poziom/ranking) gracz ma przewagę — NPC nigdy nie jest silniejszy
+   → ranked lvl 25 ranking 2000: expected 0.5 to be greater than or equal to 0.6
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-05 NPC nie jest bezbronny — zdobywa punkty w każdym meczu
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > zapisuje raport do docs/testy/logi/symulacja-balansu.md
+ ✓ tests/balance.test.ts > Turniej fikcyjnych graczy (fake data) > T-SIM-06 12 fikcyjnych graczy gra po meczu rankingowym; ranking i XP przeliczone regułami gry
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-07 w KAŻDEJ konfiguracji (poziom/ranking) gracz ma przewagę — NPC nigdy nie jest silniejszy
+AssertionError: ranked lvl 25 ranking 2000: expected 0.5 to be greater than or equal to 0.6
+ ❯ tests/balance.test.ts:80:34
+     78|       const rs = results.filter((x) => x.cfg === cfg).map((x) => x.r)
+     79|       const label = `${cfg.mode} lvl ${cfg.level} ranking ${cfg.rating…
+     80|       expect(winRate(rs), label).toBeGreaterThanOrEqual(0.6)
+       |                                  ^
+     81|       expect(margin(rs), label).toBeGreaterThan(0)
+     82|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  15:20:39
+   Duration  1.99s (transform 105ms, setup 0ms, collect 1.13s, tests 208ms, environment 0ms, prepare 98ms)
+

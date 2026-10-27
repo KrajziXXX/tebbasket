@@ -1,0 +1,93 @@
+=====================================================================
+ tebBasket — log z uruchomienia testów automatycznych
+=====================================================================
+ Data:         27.10.2026, 15:24:58
+ Node.js:      v22.16.0 (win32 x64)
+ Commit:       53bb224 (main)
+ Polecenie:    npx vitest run --reporter=verbose
+ Czas trwania: 6.8 s
+ Kod wyjścia:  0 (WSZYSTKIE TESTY ZALICZONE)
+=====================================================================
+
+ RUN  v2.1.9 D:/tebbasket
+
+ ✓ tests/engine.test.ts > Silnik: przebieg meczu > T-EN-01 mecz startuje od intro, potem rzut sędziowski, potem gra
+ ✓ tests/engine.test.ts > Silnik: przebieg meczu > T-EN-02 rzut sędziowski jest losowy — w 40 meczach piłkę dostają obie strony
+ ✓ tests/engine.test.ts > Silnik: przebieg meczu > T-EN-03 trening: bez przeciwnika, bez rzutu sędziowskiego, kończy się po czasie bez zwycięzcy
+ ✓ tests/engine.test.ts > Silnik: przebieg meczu > T-EN-04 zegar akcji: po 14 s bez rzutu piłka przechodzi do rywala
+ ✓ tests/engine.test.ts > Silnik: przebieg meczu > T-EN-05 remis po czasie → złoty kosz; pierwszy kosz kończy mecz
+ ✓ tests/engine.test.ts > Silnik: przebieg meczu > T-EN-06 buzzer beater: rzut w powietrzu w chwili syreny się liczy i wygrywa mecz
+ ✓ tests/engine.test.ts > Silnik: rzuty > T-EN-07 okno idealnego rzutu: ±0,045 s od szczytu wyskoku
+ ✓ tests/engine.test.ts > Silnik: rzuty > T-EN-08 przytrzymanie i puszczenie na szczycie = rzut „IDEALNIE”
+ ✓ tests/engine.test.ts > Silnik: rzuty > T-EN-09 szybkie kliknięcie = zwykły rzut bez celownika
+ ✓ tests/engine.test.ts > Silnik: rzuty > T-EN-10 zbyt długie trzymanie → automatyczne „ZA PÓŹNO”
+ ✓ tests/engine.test.ts > Silnik: rzuty > T-EN-11 szansa trafienia: bliżej = łatwiej, obrońca przeszkadza, wynik w [4%, 97%]
+ ✓ tests/engine.test.ts > Silnik: rzuty > T-EN-12 powershot trafia zawsze (100%), nawet przy najgorszym losowaniu
+ ✓ tests/engine.test.ts > Silnik: rzuty > T-EN-13 wsad: blisko kosza akcja zmienia się we wsad, zawodnik wisi na obręczy, +2 pkt
+ ✓ tests/engine.test.ts > Silnik: obrona i zagrania specjalne > T-EN-14 udany przechwyt zabiera piłkę, liczy się w statystykach i ładuje powershot
+ ✓ tests/engine.test.ts > Silnik: obrona i zagrania specjalne > T-EN-15 nieudany przechwyt „zamraża” obrońcę — nie da się spamować
+ ✓ tests/engine.test.ts > Silnik: obrona i zagrania specjalne > T-EN-16 przechwyt z daleka (> 75 px) nie ma szans
+ ✓ tests/engine.test.ts > Silnik: obrona i zagrania specjalne > T-EN-17 blok: obrońca w powietrzu w chwili wypuszczenia piłki zbija rzut
+ ✓ tests/engine.test.ts > Silnik: obrona i zagrania specjalne > T-EN-18 zwód przy sięgającym obrońcy przewraca go („ZWÓD!”)
+ ✓ tests/engine.test.ts > Silnik: obrona i zagrania specjalne > T-EN-19 „W OGNIU”: 3 kosze z rzędu bez odpowiedzi, gaśnie po koszu rywala
+ ✓ tests/engine.test.ts > Silnik: obrona i zagrania specjalne > T-EN-20 maskotka: tylko akcje gracza, zwykłe max co 6 s, wielkie zawsze
+ ✓ tests/api.test.ts > Backend offline: konto > T-API-01 bez zmiennych Supabase gra działa w trybie offline
+ ✓ tests/api.test.ts > Backend offline: konto > T-API-02 nowy gracz: poziom 1, 0 monet, 0 klejnotów, 2 stroje startowe, ranking 1000
+ ✓ tests/api.test.ts > Backend offline: konto > T-API-03 profil przetrwa „odświeżenie strony” (restore z localStorage)
+ ✓ tests/api.test.ts > Backend offline: konto > T-API-04 walidacja nazwy gracza: 3–16 znaków, litery/cyfry/_
+ ✓ tests/api.test.ts > Backend offline: konto > T-API-05 nie da się założyć stroju, którego się nie posiada
+ ✓ tests/api.test.ts > Backend offline: mecze i nagrody > T-API-06 wygrany szybki mecz: +70 XP, +35 monet, +1 wygrana, ranking bez zmian
+ ✓ tests/api.test.ts > Backend offline: mecze i nagrody > T-API-07 przegrany ranked: −15 rankingu, +1 porażka, XP za udział
+ ✓ tests/api.test.ts > Backend offline: mecze i nagrody > T-API-08 awans poziomu daje 10 klejnotów (jedyne darmowe źródło)
+ ✓ tests/api.test.ts > Backend offline: mecze i nagrody > T-API-09 trening nie liczy się do bilansu wygranych/porażek
+ ✓ tests/api.test.ts > Backend offline: sklep > T-API-10 zakup za mało środków → błąd, nic się nie zmienia
+ ✓ tests/api.test.ts > Backend offline: sklep > T-API-11 zarobione monety → zakup stroju → można go założyć
+ ✓ tests/api.test.ts > Backend offline: sklep > T-API-12 ponowny zakup posiadanego stroju nic nie kosztuje
+ ✓ tests/api.test.ts > Backend offline: sklep > T-API-13 symulowany zakup klejnotów i wymiana na monety
+ ✓ tests/api.test.ts > Backend offline: sklep > T-API-14 reset postępu wraca do zera, ale zostawia nazwę i ustawienia
+ ✓ tests/api.test.ts > Backend offline: ranking > T-API-15 ranking jest posortowany malejąco i zawiera gracza
+ ✓ tests/api.test.ts > Backend offline: ranking > T-API-16 wygrany mecz rankingowy powiadamia otwarty ranking (odświeżenie na żywo)
+ ✓ tests/progression.test.ts > Progresja: XP i poziomy > T-PR-01 próg XP rośnie liniowo: 100 + (lvl−1)·40
+ ✓ tests/progression.test.ts > Progresja: XP i poziomy > T-PR-02 awans o jeden poziom z przeniesieniem nadwyżki XP
+ ✓ tests/progression.test.ts > Progresja: XP i poziomy > T-PR-03 kilka awansów naraz przy dużej nagrodzie
+ ✓ tests/progression.test.ts > Progresja: XP i poziomy > T-PR-04 brak awansu poniżej progu
+ ✓ tests/progression.test.ts > Progresja: XP i poziomy > T-PR-05 za awans przysługuje 10 klejnotów
+ ✓ tests/progression.test.ts > Progresja: nagrody za mecz > T-PR-06 hierarchia XP ze specyfikacji: ranked > quick > trening
+ ✓ tests/progression.test.ts > Progresja: nagrody za mecz > T-PR-07 przegrana też daje XP (mniej niż wygrana)
+ ✓ tests/progression.test.ts > Progresja: nagrody za mecz > T-PR-08 trening: 5 XP bazowo + 1 za celny rzut, max 20, nigdy „wygrana”
+ ✓ tests/progression.test.ts > Progresja: nagrody za mecz > T-PR-09 ranking zmienia się tylko w trybie ranked
+ ✓ tests/progression.test.ts > Progresja: statystyki z poziomu > T-PR-10 poziom 1 = statystyki bazowe
+ ✓ tests/progression.test.ts > Progresja: statystyki z poziomu > T-PR-11 bonusy rosną z poziomem, ale mają limit
+ ✓ tests/progression.test.ts > Balans: NPC zawsze słabszy od gracza > T-PR-12 quick: każda statystyka NPC wyraźnie niższa niż gracza (poziomy 1–40)
+ ✓ tests/progression.test.ts > Balans: NPC zawsze słabszy od gracza > T-PR-13 ranked: NPC słabszy, ale mniej niż w quick
+ ✓ tests/progression.test.ts > Balans: NPC zawsze słabszy od gracza > T-PR-14 inteligencja AI: quick = 0,2, ranked w przedziale 0,28–0,36 dla każdego rankingu (poniżej przeciętnego gracza 0,4)
+ ✓ tests/progression.test.ts > Balans: NPC zawsze słabszy od gracza > T-PR-15 poziom NPC nigdy nie przekracza poziomu gracza i nie spada poniżej 1
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-01 identyfikatory strojów są unikalne
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-02 dokładnie 2 stroje startowe są darmowe (TEB niebieski i biały)
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-03 każdy płatny strój ma cenę w monetach ALBO klejnotach, większą od zera
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-04 wszystkie kolory są poprawnym zapisem #RRGGBB
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-05 każdy strój ma nazwę po polsku i angielsku
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-06 nieznany strój → bezpieczny fallback na pierwszy z katalogu
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-07 buildLook łączy strój z wyglądem i nie gubi wzoru
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-08 wymiana klejnotów zawsze opłaca się bardziej przy większym pakiecie
+ ✓ tests/outfits.test.ts > Katalog strojów > T-OU-09 domyślny wygląd ma numer 12 (jak na grafice ze specyfikacji)
+ ✓ tests/outfits.test.ts > Zgodność klient ↔ serwer (supabase/schema.sql) > T-SQL-01 ceny strojów w bazie = ceny w grze
+ ✓ tests/outfits.test.ts > Zgodność klient ↔ serwer (supabase/schema.sql) > T-SQL-02 nagrody XP i monet w finish_match() = REWARDS w progression.ts
+ ✓ tests/outfits.test.ts > Zgodność klient ↔ serwer (supabase/schema.sql) > T-SQL-03 klejnoty za awans w bazie = GEMS_PER_LEVEL
+ ✓ tests/outfits.test.ts > Zgodność klient ↔ serwer (supabase/schema.sql) > T-SQL-04 nowe konto startuje z 0 monet i 0 klejnotów
+ ✓ tests/outfits.test.ts > Zgodność klient ↔ serwer (supabase/schema.sql) > T-SQL-05 pakiety wymiany i mock płatności mają te same ID co w grze
+ ✓ tests/outfits.test.ts > Zgodność klient ↔ serwer (supabase/schema.sql) > T-SQL-06 RLS włączone na wszystkich tabelach, klient nie może zmieniać waluty
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-01 każdy mecz kończy się poprawnie (zwycięzca, czas ≈ 3 min + przerwy)
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-02 szybki mecz: przeciętny gracz wygrywa ≥ 80% (NPC wyraźnie słabszy)
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-03 ranked: gracz wygrywa częściej niż przegrywa, ale nie zawsze (NPC tylko trochę słabszy)
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-04 przewaga punktowa w ranked jest mniejsza niż w szybkim meczu
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-07 w KAŻDEJ konfiguracji (poziom/ranking) gracz ma przewagę — NPC nigdy nie jest silniejszy
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > T-SIM-05 NPC nie jest bezbronny — zdobywa punkty w każdym meczu
+ ✓ tests/balance.test.ts > Symulacja balansu (60 pełnych meczów) > zapisuje raport do docs/testy/logi/symulacja-balansu.md
+ ✓ tests/balance.test.ts > Turniej fikcyjnych graczy (fake data) > T-SIM-06 12 fikcyjnych graczy gra po meczu rankingowym; ranking i XP przeliczone regułami gry
+
+ Test Files  5 passed (5)
+      Tests  74 passed (74)
+   Start at  15:25:01
+   Duration  2.88s (transform 402ms, setup 0ms, collect 2.43s, tests 1.06s, environment 1ms, prepare 1.15s)
+
